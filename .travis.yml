@@ -1,6 +1,6 @@
 language: java
 dist: xenial
 script:
-  - jdk_switcher use oraclejdk8
+  - jdk_switcher use openjdk-8-jdk
   - ./dev/make-distribution.sh --name custom-spark --pip --r --tgz -Psparkr -Phadoop-2.7 -Dhadoop.version=2.9.2 -Phive -Phive-thriftserver -Pmesos -Pyarn -Pkubernetes
 install: true

@@ -1,6 +1,6 @@
 language: java
 dist: trusty
-script: ./dev/make-distribution.sh --name custom-spark --pip --r --tgz -Psparkr -Phadoop-2.7 -Dhadoop.version=2.9.2 -Phive -Phive-thriftserver -Pmesos -Pyarn -Pkubernetes
+script: travis_wait 30 ./dev/make-distribution.sh --name custom-spark --pip --r --tgz -Psparkr -Phadoop-2.7 -Dhadoop.version=2.9.2 -Phive -Phive-thriftserver -Pmesos -Pyarn -Pkubernetes
 install: true
 before_install:
   - sudo apt-get install -y r-base

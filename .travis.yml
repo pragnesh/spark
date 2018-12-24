@@ -7,7 +7,7 @@ before_install:
 deploy:
   provider: releases
   api_key:
-    secure: ${GITHUB_KEY}
+    secure: WbRkxuxzw6x7+4ycfn8hKMG09icU9PwkQ/CRWvMEfFhzg03aSgrC2JbXUIYW1vjEj10BEZKNcepJfIWivwL4DmsFyyXUjNZxLu28q2TqXA3gtWq3u7f8MPS3Ykm2up31z/MjENFxl1mn3LQz+LBk/DZt8Geu5IfsrYLTb2iovNlHsYyoMncceKoNRCRcaxaTgIoMB5wmZfFuNXqJDR4EkTe4Ds4/Xcd+1a68AS5fsmugUnw6RLS56gmBoVZF2oSJM5ruxpjNZb3fTJfSxeemYt44hhb7pVKs1J4AzAzNWz2g3OcsgEG+VuCIHf2DFqVK668EO/Cn4rzZOxNPZabNVxMwKB6n9tw2kNutF4lQ+rl431fUk8fYhh2rsgZJN9bW2ZsEt/JBWs0P0TefaudpwTqHvNW9dSUlkUchm9N0KzRq4KV0QEmQLT8s2phrEB7/YtmWr+aBHdlCdE6hCyinLIXesgolSmmZTmtCtwRhRpIf8LagcXbDBILi72xEXkESuhNUez096H1KwhVj2k8zsTVwJyW9Aa3Oo5XeioC5FH+fPFT+7mR/GeKeK8JzK5yExSkV9KSjcaxZ4HAyh7u1A4Nw6QpvgrOKEaWlgmBLxWvwZZJBjik4pwQxv9zCsiJnkIY/ja5t0p/JQdr+y+c9lCxvLOLLkvKDCMHxBJkRvmE=
   file_glob: true
   file: spark*.tgz
   skip_cleanup: true

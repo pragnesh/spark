@@ -4,3 +4,13 @@ script: travis_wait 30 ./dev/make-distribution.sh --name hadoop2.9.2 --pip --tgz
 install: true
 before_install:
   - sudo apt-get install -y r-base
+deploy:
+  provider: releases
+  api_key:
+    secure: ${GITHUB_KEY}
+  file_glob: true
+  file: spark*.tgz
+  skip_cleanup: true
+  on:
+    repo: pragnesh/spark
+    tags: true

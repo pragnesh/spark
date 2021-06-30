@@ -1,0 +1,15 @@
+language: java
+dist: focal
+script: travis_wait 30 ./dev/make-distribution.sh --name hadoop3.3.1 --pip --tgz -Phadoop-3.2 -Dhadoop.version=3.3.1 -Phive -Phive-thriftserver -Pmesos -Pyarn -Pkubernetes -Phadoop-cloud
+install: true
+deploy:
+  provider: releases
+  api_key:
+    secure: ehe+Yk3ahpEzen+qogAOaiOL7lCBoOQfTIGqffoB9Ai0A7k4QOdxqFKIz1oECnM8zwXLqmchiawZ0bP3fV2OSnyAGr0n6jpef8Q6gO1cSKM091mS6o9jOvcqvZ13KbAGS+1g9PBEGTQGZT/6fUhwmigjAsWklBCqOQrIOZLZ/HjN3VfPZ4pSDAzf+IHZ4EBnSt5VeReIAT/RPOL8oX2wf32A888ggbW2peZBpTSA7/hLybV0p/8vIhmBjQNkCs/FjdySRsqVrHORMbMNGH0/yJKjQwnBoDCiNGVhrdk+YODMB6QjmLpEtXDodi5oNupUKz+b/tJQhnHVzuo2t/zHr99PGnt3U+1G7aYZX/cmOjSwM14F31h9CPIQrYn/1ZSP38GH2C58onNiM2z1C33BPGAeBcjdFdxWR4GCnCBPFkDyURYyzj+myGFnFG6OStHw9QNx2eX6csH6Y6MsLz41Sz1wBHh0ZrI5tAXs3/n5DBU6S0QHy3Lmw+7+TK2+KtXQ58z3XSvGZUQWubprx7VINYz8KTFZ1Du1Q/92KH3NdFayxVIlg35j8DAGKAEYqJ873+YJ9lrt9+KAgrT5M4SHm+Z6mV7LIlwpSk79fHC6Tjt0WutvRHlkkfr9+M0WnIRu0U21T/rBuFAJHES60d0MNXZ/fgZt0pLaQ4WC+kac6dY=
+  file: spark*.tgz
+  file_glob: true
+  skip_cleanup: true
+  on:
+    repo: pragnesh/spark
+    branch: travis_spark-3.1.2-hadoop-3.3.1
+    tags: true
